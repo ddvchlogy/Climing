@@ -1,12 +1,7 @@
 # > OneDrive
-<<<<<<< HEAD
-USER-AGENT,OneDrive
-USER-AGENT,OneDriveiOSApp
-=======
 PROCESS-NAME,OneDrive
 PROCESS-NAME,OneDriveUpdater
 USER-AGENT,OneDrive*
 USER-AGENT,OneDriveiOSApp*
->>>>>>> parent of a812fa8... Update Onedrive.list
 DOMAIN-SUFFIX,sharepoint.com
 DOMAIN-SUFFIX,sharepointonline.com
