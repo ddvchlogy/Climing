@@ -1,3 +1,7 @@
+#!name= Advertising
+#!desc= Remove Ads
+#!system=ios
+
 [URL Rewrite]
 # Block Ads Start
 
