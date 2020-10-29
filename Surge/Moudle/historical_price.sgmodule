@@ -1,5 +1,5 @@
-#!name=历史价格
-#!desc=显示京东、淘宝的历史价格
+#!name=Historical price
+#!desc=Display Taoba & JD historical price
 
 [Script]
 http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
