@@ -280,9 +280,6 @@
 ^https?:\/\/c\.m\.163\.com\/nc\/gl\/ - reject
 # > NetEase MoneyKeeper - client.mail.163.com
 ^https?:\/\/client\.mail\.163\.com\/apptrack\/confinfo\/searchMultiAds - reject
-# > NetEase CloudMusic - interface*.music.163.com,59.111.181.*
-# ^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/eapi\/ad\/ - reject
-# ^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/ - reject
 # > NetEase Kaola - sp.kaola.com
 ^https?:\/\/sp\.kaola\.com\/api\/openad - reject
 # > NetEase You - support.you.163.com
