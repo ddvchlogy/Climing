@@ -7,6 +7,7 @@ const aqicnToken = 'ff0f4699afd0fb849d77df830fcd285d44983b2c'
 /*
 	[Script]
 	AQI-US = type=http-response, pattern=https://weather-data.apple.com/v1/weather/[\w-]+/[0-9]+\.[0-9]+/[0-9]+\.[0-9]+\?, requires-body=true, script-path=/path/to/iOS_Weather_AQI_Standard.js
+
 	[MITM]
 	hostname = weather-data.apple.com
 */
@@ -39,7 +40,7 @@ function classifyAirQualityLevel(aqiIndex) {
 		return AirQualityLevel.UNHEALTHY;
 	} else if (aqiIndex >= 201 && aqiIndex <= 300) {
 		return AirQualityLevel.VERY_UNHEALTHY;
-	} else if (aqiIndex >= 301 && aqiIndex <= 500) {
+	} else if (aqiIndex >= 301) {
 		return AirQualityLevel.HAZARDOUS;
 	}
 }
@@ -66,7 +67,7 @@ function getPrimaryPollutant(pollutant) {
 		case 'o3':
 			return 'OZONE';
 		default:
-			return "OTHER";
+			console.log('Unknown pollutant ' + pollutant);
 	}
 }
 
@@ -74,7 +75,7 @@ function constructAirQuailityNode(aqicnData) {
 	let airQualityNode = { "source": "", "learnMoreURL": "", "isSignificant": true, "airQualityCategoryIndex": 1, "airQualityScale": "", "airQualityIndex": 0, "pollutants": { "CO": { "name": "CO", "amount": 0, "unit": "μg/m3" }, "SO2": { "name": "SO2", "amount": 0, "unit": "μg/m3" }, "NO2": { "name": "NO2", "amount": 0, "unit": "μg/m3" }, "PM2.5": { "name": "PM2.5", "amount": 0, "unit": "μg/m3" }, "OZONE": { "name": "OZONE", "amount": 0, "unit": "μg/m3" }, "PM10": { "name": "PM10", "amount": 0, "unit": "μg/m3" } }, "metadata": { "reported_time": 0, "longitude": 0, "provider_name": "aqicn.org", "expire_time": 2, "provider_logo": "https://i.loli.net/2020/12/27/UqW23eZLFAIbxGV.png", "read_time": 2, "latitude": 0, "v": 1, "language": "", "data_source": 0 }, "name": "AirQuality", "primaryPollutant": "" }
 	const aqicnIndex = aqicnData.aqi
 	airQualityNode.source = aqicnData.city.name
-	airQualityNode.learnMoreURL = aqicnData.city.url + '/cn'
+	airQualityNode.learnMoreURL = aqicnData.city.url + '/cn/m'
 	airQualityNode.airQualityCategoryIndex = classifyAirQualityLevel(aqicnIndex)
 	airQualityNode.airQualityScale = AirQualityStandard.US
 	airQualityNode.airQualityIndex = aqicnIndex
