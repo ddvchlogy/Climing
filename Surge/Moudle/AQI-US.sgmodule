@@ -1,5 +1,5 @@
 #!name= AQI-US
-#!desc= change air AQI to US-standard
+#!desc= 将天气APP中AQI标准改为US标准(更严格)
 #!system=ios
 
 [Script]
