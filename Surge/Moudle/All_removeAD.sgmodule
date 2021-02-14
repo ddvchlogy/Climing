@@ -1,5 +1,5 @@
-#!name= Advertising
-#!desc= Remove Ads
+#!name= 去除广告
+#!desc= 去除大部分应用内置广告
 #!system=ios
 
 [URL Rewrite]
